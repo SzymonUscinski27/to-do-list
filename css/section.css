@@ -1,0 +1,12 @@
+.section__header {
+    background-color: white;
+    padding: 20px;
+    margin: 10px 0 3px 0;
+    font-size: 20px
+}
+
+.section__list {
+    height: 60px;
+    margin-top: 3px;
+    background-color: white;
+}
