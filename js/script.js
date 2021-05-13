@@ -9,6 +9,11 @@
         render();
     }
 
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    }
+
     const render = () => {
         let listOfTasks = "";
 
@@ -16,10 +21,20 @@
             listOfTasks += `
             <li>
             ${task.content}
+            <button class="section__button js-remove">🗑</button>
             </li>`
         }
 
         document.querySelector(".js-tasks").innerHTML = listOfTasks;
+
+        const removeButtons = document.querySelectorAll(".js-remove");
+
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(taskIndex);
+            });
+        });
+
     }
 
     const onFormSubmit = (event) => {
