@@ -1,6 +1,11 @@
 {
     const tasks = [];
 
+    const resetNewTaskContent = (newTask) => {
+        newTask.value = "";
+        newTask.focus();
+    }
+
     const addNewTask = (newTaskContent) => {
         tasks.push({
             content: newTaskContent
@@ -64,14 +69,15 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTaskContent = document.querySelector(".js-newTask").value.trim();
+        const newTask = document.querySelector(".js-newTask");
 
         if (newTaskContent === "") {
             return;
         }
 
         addNewTask(newTaskContent);
-
+        resetNewTaskContent(newTask);
     };
 
     const init = () => {
