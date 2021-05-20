@@ -29,6 +29,7 @@
     margin: 0 10px;
     border: none;
     text-align: center;
+    transition: background 1s;
 }
 
 .list__button--done {
