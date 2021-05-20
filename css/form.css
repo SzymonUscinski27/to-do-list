@@ -3,13 +3,13 @@
     flex-wrap: wrap;
     background-color: white;
     padding: 20px;
-    font-weight: 500;
 }
 
 .form__input {
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
     padding: 10px;
     flex-grow: 1;
+    font-weight: 500;
 }
 
 .form__button {
