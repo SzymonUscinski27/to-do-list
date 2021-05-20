@@ -15,7 +15,7 @@
 
 .list__taskContent {
     padding: 10px 0;
-    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .list__taskContent--done {
