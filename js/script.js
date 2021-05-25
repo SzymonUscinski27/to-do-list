@@ -1,11 +1,6 @@
 {
     let tasks = [];
 
-    const resetNewTaskContent = (newTask) => {
-        newTask.value = "";
-        newTask.focus();
-    }
-
     const addNewTask = (newTaskContent) => {
         tasks = [
             ...tasks,
@@ -87,12 +82,12 @@
         const newTask = document.querySelector(".js-newTask");
         const newTaskContent = newTask.value.trim();
 
-        if (newTaskContent === "") {
-            return;
+        if (newTaskContent !== "") {
+            addNewTask(newTaskContent);
         }
 
-        addNewTask(newTaskContent);
-        resetNewTaskContent(newTask);
+        newTask.value = "";
+        newTask.focus();
     };
 
     const init = () => {
