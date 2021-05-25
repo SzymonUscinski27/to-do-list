@@ -29,7 +29,7 @@
         render();
     }
 
-    const bindEvents = () => {
+    const bindRemoveEvent = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -37,7 +37,9 @@
                 removeTask(taskIndex);
             });
         });
+    }
 
+    const bindToggleDoneEvent = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
@@ -47,7 +49,7 @@
         });
     }
 
-    const render = () => {
+    const renderTasks = () => {
         let tasksHTML = "";
 
         for (const task of tasks) {
@@ -72,8 +74,12 @@
         }
 
         document.querySelector(".js-tasks").innerHTML = tasksHTML;
+    }
 
-        bindEvents();
+    const render = () => {
+        renderTasks();
+        bindRemoveEvent();
+        bindToggleDoneEvent();
     }
 
     const onFormSubmit = (event) => {
