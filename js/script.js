@@ -45,9 +45,6 @@
         render();
     }
 
-
-
-
     const bindHideShowTasksButton = () => {
         const showHideTasksButton = document.querySelector(".js-showHideTasksButton");
 
@@ -93,11 +90,18 @@
 
         if (tasks.length > 0) {
             buttonsHTML += `
-            <button class="buttonsContainer__button js-showHideTasksButton">
-            ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+            <button class="
+            buttonsContainer__button js-showHideTasksButton
+            "
+            >
+                ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
-            <button class="buttonsContainer__button js-toggleAllTasksButton
-            ${tasks.every(({ done }) => done) ? "disabled" : ""}"> Ukończ wszystkie
+            <button class="
+            buttonsContainer__button js-toggleAllTasksButton
+                ${tasks.every(({ done }) => done) ? "disabled" : ""}
+            "
+            > 
+            Ukończ wszystkie
             </button>
             `;
         }
