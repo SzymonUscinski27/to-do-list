@@ -91,13 +91,13 @@
         if (tasks.length > 0) {
             buttonsHTML += `
             <button class="
-            buttonsContainer__button js-showHideTasksButton
+            section__button js-showHideTasksButton
             "
             >
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             <button 
-              class="buttonsContainer__button js-toggleAllTasksButton" 
+              class="section__button js-toggleAllTasksButton" 
               ${tasks.every(({ done }) => done) ? "disabled" : ""}
             > 
             Ukończ wszystkie
