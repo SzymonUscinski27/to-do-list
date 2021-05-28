@@ -1,3 +1,10 @@
+.section {
+    display: grid;
+    grid-auto-rows: minmax(50px, auto);
+    grid-row-gap: 1px;
+    margin: 10px 0 3px;
+}
+
 .section__header {
     padding: 20px;
     margin: 10px 0 3px 0;
