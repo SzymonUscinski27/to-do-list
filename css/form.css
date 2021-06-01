@@ -19,6 +19,7 @@
     padding: 10px;
     margin-left: 15px;
     transition: background 1s, transform 1s;
+    cursor: pointer;
 }
 
 @media (max-width: 767px) {

@@ -34,6 +34,7 @@
     border: none;
     text-align: center;
     transition: background 1s;
+    cursor: pointer;
 }
 
 .list__button--done {
