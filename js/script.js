@@ -39,24 +39,24 @@
         render();
     }
 
-    const showHideTasksDone = () => {
+    const toggleHideDoneTasks = () => {
         hideDoneTasks = !hideDoneTasks
 
         render();
     }
 
-    const bindHideShowTasksButton = () => {
-        const showHideTasksButton = document.querySelector(".js-showHideTasksButton");
+    const bindToggleTasksDone = () => {
+        const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasksButton");
 
-        if (showHideTasksButton) {
-            showHideTasksButton.addEventListener("click", () => {
-                showHideTasksDone();
+        if (toggleHideDoneTasksButton) {
+            toggleHideDoneTasksButton.addEventListener("click", () => {
+                toggleHideDoneTasks();
             });
         }
     }
 
     const bindToggleAllTasksDone = () => {
-        const toggleAllTasksButton = document.querySelector(".js-toggleAllTasksButton");
+        const toggleAllTasksButton = document.querySelector(".js-toggleAllTasksDoneButton");
 
         if (toggleAllTasksButton) {
             toggleAllTasksButton.addEventListener("click", () => {
@@ -65,7 +65,7 @@
         }
     }
 
-    const bindRemoveEvent = () => {
+    const bindRemoveEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -75,7 +75,7 @@
         });
     }
 
-    const bindToggleDoneEvent = () => {
+    const bindToggleDoneEvents = () => {
         const toggleDoneButtons = document.querySelectorAll(".js-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, taskIndex) => {
@@ -91,13 +91,13 @@
         if (tasks.length > 0) {
             buttonsHTML += `
             <button class="
-            section__button js-showHideTasksButton
+            section__button js-toggleHideDoneTasksButton
             "
             >
                 ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
             </button>
             <button 
-              class="section__button js-toggleAllTasksButton" 
+              class="section__button js-toggleAllTasksDoneButton" 
               ${tasks.every(({ done }) => done) ? "disabled" : ""}
             > 
             Ukończ wszystkie
@@ -139,10 +139,10 @@
         renderTasks();
         renderButtons();
 
-        bindHideShowTasksButton();
+        bindToggleTasksDone();
         bindToggleAllTasksDone();
-        bindRemoveEvent();
-        bindToggleDoneEvent();
+        bindRemoveEvents();
+        bindToggleDoneEvents();
     }
 
     const onFormSubmit = (event) => {
