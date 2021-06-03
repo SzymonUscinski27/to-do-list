@@ -8,7 +8,6 @@
 .list__item {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    align-items: center;
     border-bottom: 1px solid #ddd;
     padding: 5px;
 }
@@ -18,7 +17,7 @@
 }
 
 .list__taskContent {
-    padding: 10px 0;
+    align-self: center;
     word-break: break-word;
 }
 
